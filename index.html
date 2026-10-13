@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة ذاكر - الفرقة الثالثة نظم معلومات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <div class="navbar">
+        <div class="brand">
+            📚Badawy
+        </div>
+        <span class="batch-tag">الفرقة الثالثة - نظم ومعلومات</span>
+    </div>
+
+    <div class="container">
+        <!-- Hero Intro -->
+        <div class="hero">
+            <h1>جميع مواد ومذكرات الترم الأول</h1>
+            <p>اختر المادة لعرض الملخصات والمحاضرات بشكل منظم</p>
+        </div>
+
+        <!-- Materials / Subjects Grid -->
+        <div class="subjects-bar-wrapper">
+            <div class="section-title">
+                📌 مواد الفصل الدراسي (9 مواد)
+            </div>
+            <div class="subjects-grid">
+                <!-- Subject 1 -->
+                <div class="subject-card active" onclick="loadSubject('insurance', this)">
+                    <div class="subject-icon">🛡️</div>
+                    <div class="subject-info">
+                        <h3>التأمين وإدارة المخاطر</h3>
+                    </div>
+                </div>
+
+                <!-- Subject 2 -->
+                <div class="subject-card" onclick="loadSubject('econ', this)">
+                    <div class="subject-icon">📊</div>
+                    <div class="subject-info">
+                        <h3>مبادئ الاقتصاد الكلي</h3>
+                    </div>
+                </div>
+
+                <!-- Subject 3 -->
+                <div class="subject-card" onclick="loadSubject('db', this)">
+                    <div class="subject-icon">🗄️</div>
+                    <div class="subject-info">
+                        <h3>قواعد البيانات</h3>
+                        <span>محاضرات + معمل</span>
+                    </div>
+                </div>
+
+                <!-- Subject 4 -->
+                <div class="subject-card" onclick="loadSubject('investment_sec', this)">
+                    <div class="subject-icon">📈</div>
+                    <div class="subject-info">
+                        <h3>مبادئ الاستثمار</h3>
+                        <span>(سكشن)</span>
+                    </div>
+                </div>
+
+                <!-- Subject 5 -->
+                <div class="subject-card" onclick="loadSubject('insurance_sec', this)">
+                    <div class="subject-icon">🛡️</div>
+                    <div class="subject-info">
+                        <h3>التأمين وإدارة المخاطر</h3>
+                        <span>الأنظمة جمعة (سكشن)</span>
+                    </div>
+                </div>
+
+                <!-- Subject 6 -->
+                <div class="subject-card" onclick="loadSubject('db_lab', this)">
+                    <div class="subject-icon">🗄️</div>
+                    <div class="subject-info">
+                        <h3>قواعد البيانات</h3>
+                        <span>(معمل)</span>
+                    </div>
+                </div>
+
+                <!-- Subject 7 -->
+                <div class="subject-card" onclick="loadSubject('prog', this)">
+                    <div class="subject-icon">💻</div>
+                    <div class="subject-info">
+                        <h3>تصميم برامج الحاسب الآلي</h3>
+                    </div>
+                </div>
+
+                <!-- Subject 8 -->
+                <div class="subject-card" onclick="loadSubject('prog_lab', this)">
+                    <div class="subject-icon">💻</div>
+                    <div class="subject-info">
+                        <h3>تصميم برامج الحاسب الآلي</h3>
+                        <span>(معمل)</span>
+                    </div>
+                </div>
+
+                <!-- Subject 9 -->
+                <div class="subject-card" onclick="loadSubject('investment', this)">
+                    <div class="subject-icon">📈</div>
+                    <div class="subject-info">
+                        <h3>مبادئ الاستثمار</h3>
+                    </div>
+                </div>
+
+                <!-- Subject 10 -->
+                <div class="subject-card" onclick="loadSubject('schedule', this)">
+                    <div class="subject-icon">📅</div>
+                    <div class="subject-info">
+                        <h3>جدول المحاضرات</h3>
+                        <span>مواعيد والقاعات</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Area -->
+        <div class="content-area" id="contentArea">
+            <!-- Content will be rendered dynamically by JS -->
+        </div>
+
+  
+    </div>
+
+    <script>
+        const subjectsData = {
+            insurance: {
+                title: "التأمين وإدارة المخاطر",
+                lectures: [
+                    {
+                        title: "المحاضرة الأولى: التأمين وإدارة المخاطر  - د. علاء الدين محمد عوض",
+                        content: `
+                            <div class="lecture-box blue-border">
+                                <h3>📌 أولاً: مفهوم الخطر</h3>
+                                <p><strong>المعنى اللغوي والاصطلاحي للخطر:</strong> يشير إليها معجم مختار الصحاح بأنها تعني الإشراف على الهلاك (يقال: خاطر بنفسه).</p>
+                                <p>تم تعريف المخاطر بطرق مختلفة، ولا يوجد تعريف محدد لها، تركز بعض التعريفات على:</p>
+                                <ul>
+                                    <li>احتمالية وقوع حدث ما، وعدم اليقين إلى عدم التأكد في النتائج الإيجابية أو السلبية.</li>
+                                    <li>يشير البعض الآخر إلى المخاطر على أنها مجموعة أحداث من عدم التأكد يمكن قياسها كمياً.</li>
+                                    <li>كما تعتبر المخاطر مفهوماً سلبيًا ويفهم على أنه عدم اليقين حول المستقبل.</li>
+                                </ul>
+                            </div>
+
+                            <div class="lecture-box teal-border">
+                                <h3>⚖️ ثانياً: المخاطرة والتأمين (عدم التأكد من وقوع خسارة معينة يشمل)</h3>
+                                <p><strong>1. عدم التأكد من نتائج القرارات</strong> التي يتخذها الإنسان في حياته العملية أو الشخصية، فحياة الإنسان سلسلة من القرارات المتتابعة، لا يعرف مقدما نتائج هذه القرارات، أمثلة لذلك:</p>
+                                <ul>
+                                    <li>القرار الذي يتخذه التاجر باستثمار أمواله في تجارة معينة، حيث لا يتمكن من معرفة إلا في نهاية العام، كذلك لا يستطيع مقارنة نتائج هذا الاستثمار بنتائج استثماراته الأخرى.</li>
+                                    <li>القرار الذي يتخذه الطالب باختيار تخصص معين في دراسته، لا يستطيع معرفة نتيجة دراسته مقدما.</li>
+                                </ul>
+                                <p><strong>2. عدم التأكد من الظواهر الطبيعية والعامة المتعددة</strong>، وتأثيرها علي حياة الإنسان ودخله وممتلكاته، ويقصد بالظواهر الطبيعية تلك الظواهر المتعلقة بالبيئة المحيطة بحياة الإنسان، بينما يقصد بالظواهر العامة كل ما يتصل بحياة الإنسان من ظواهر.</p>
+                                <p><strong>أمثلة للظواهر الطبيعية والعامة:</strong></p>
+                                <ul>
+                                    <li>ظاهرة الوفاة التي تلاحق البشر جميعا (ظاهرة طبيعية).</li>
+                                    <li>ظاهرة الحريق التي تهدد ممتلكات الأفراد (ظاهرة عامة).</li>
+                                    <li>ظاهرة حوادث السيارات (ظاهرة عامة).</li>
+                                    <li>ظاهرة السرقة والسطو التي تتعرض لها معظم المنقولات (ظاهرة عامة).</li>
+                                    <li>ظاهرة الحروب وما تسببها من دمار في الممتلكات وضياع للأرواح ورؤوس الأموال (ظاهرة عامة).</li>
+                                    <li>ظاهرة الأعاصير والبراكين والسيول والفيضانات (ظواهر طبيعية)، ويطلق البعض علي مثل هذه الظواهر الطبيعية لفظ الكوارث بسبب كون ناتج تحقق هذه الظواهر خسائر وأضرار فادحة.</li>
+                                </ul>
+                            </div>
+
+                            <div class="lecture-box amber-border">
+                                <h3>📊 ثالثاً: أهم عناصر الفروق بين الخطر وعدم التأكد</h3>
+                                <table class="custom-table">
+                                    <tr>
+                                        <th>العنصر</th>
+                                        <th>الخطر</th>
+                                        <th>عدم التأكد</th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>طبيعة المستقبل</strong></td>
+                                        <td>غير مؤكد</td>
+                                        <td>غير مؤكد</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>إمكانية تحديد الاحتمالات</strong></td>
+                                        <td>غالبا ممكنة</td>
+                                        <td>قد تكون غير ممكنة</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>القياس</strong></td>
+                                        <td>يمكن قياسه احتماليا</td>
+                                        <td>يصعب قياسه</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>المثال</strong></td>
+                                        <td>احتمال حريق مصنع</td>
+                                        <td>ظهور تقنية جديدة غير معروفة النتائج</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="lecture-box red-border">
+                                <h3>📂 رابعاً: التصنيفات الأساسية للأخطار</h3>
+                                <p><strong>1. تبعا لطبيعتها:</strong></p>
+                                <ul>
+                                    <li><strong>الأخطار غير الاقتصادية Noneconomic Risks (الأخطار المعنوية):</strong> هي الأخطار التي يكون ناتج مسبباتها خسارة معنوية بحتة ليس لها صلة بالنواحي المالية وتظهر واضحة في: خطر وفاة صديق عزيز أو مصلح اجتماعي أو فقيه ديني، خطر عدم فوز الفريق الوطني في بطولة رياضية دولية، خطر التأخر أو عدم حضور احتفالية بمناسبة دينية أو رياضية، خطر تفكك الأسرة وما يترتب علي ذلك من آثار نفسية أو معنوية، خطر عدم التخرج بتقدير مرتفع وفقدان التقدير الأدبي، خطر عدم الفوز بالأصوات الكافية للترشيح لمنصب رفيع.</li>
+                                    <li><strong>الأخطار الاقتصادية Economic Risks:</strong> الأخطار الاقتصادية هي التي يكون ناتج مسبباتها خسارة مالية أو اقتصادية، مثل: خطر الوفاة المرتبط بفقدان الدخل (الوفاة المبكرة)، خطر الحريق المرتبط بفقدان الممتلكات، خطر سرقة الممتلكات، خطر الغرق المرتبط بفقد شحنة السفينة أو كليهما، خطر الكساد المرتبط بالبطالة، خطر المسؤولية المدنية الناتجة عن التسبب للغير في خسارة مادية أو بدنية، خطر التعرض لإصابات العمل، خطر خسارة الاستثمارات في بورصة الأسهم، خطر كساد منتج ما بسبب تغيير أذواق المستهلكين.</li>
+                                </ul>
+
+                                <p class="mt-10"><strong>2. الأخطار الاقتصادية من حيث طبيعة نشأتها:</strong></p>
+                                <ul>
+                                    <li><strong>أخطار المضاربة Speculative Risks:</strong> تعرف بأنها تلك الأخطار التي يتسبب في نشأتها ظواهر يخلقها الإنسان بنفسه ولنفسه بغرض تحقيق مكاسب مالية أو تجارية، إلا أن ناتجها يكون غير معروف مقدما فهي تحتمل الربح كما تحتمل الخسارة، ولهذا تسمى أحيانا بالأخطار التجارية. أمثلة: الاستثمار في الأسهم - المضاربة في العملات - إطلاق منتج جديد - الاستثمار في مشروع جديد.</li>
+                                    <li><strong>الأخطار البحتة Pure Risks:</strong> تعرف بأنها تلك الأخطار التي يتسبب في نشأتها ظواهر طبيعية وظواهر عامة ليس للإنسان دخل في وجودها ولا يمكنه تجنبها، ويترتب علي تحقق هذه الظواهر خسارة مالية مؤكدة. أمثلة: الحريق - السرقة - الوفاة - الحوادث - المرض - تلف الممتلكات.</li>
+                                </ul>
+
+                                <p class="mt-10"><strong>3. الأخطار العامة Fundamental Risks:</strong></p>
+                                <p>الخطر العام هو خطر يؤثر في النظام الاقتصادي بالكامل، أو في عدد كبير من الأشخاص أو المجموعات داخل النظام الاقتصادي، فالأخطار العامة ترجع إلى: ظروف اقتصادية (مثل التضخم السريع والبطالة الدورية)، ظروف سياسية (مثل الحروب والثورات)، ظروف طبيعية (مثل الكوارث الطبيعية من أعاصير وزلازل وبراكين وسيول). والخسائر الناتجة عن مثل هذه الأخطار فادحة في طبيعتها وتصيب عدد كبير من الوحدات في آن واحد مما يؤدي إلى تعسر ثم إفلاس المؤمنين، ولهذا فان شركات التأمين تتعامل مع الأخطار العامة في نطاق محدود.</p>
+
+                                <p class="mt-10"><strong>4. الأخطار الخاصة Particular Risks:</strong></p>
+                                <p>على عكس الخطر العام، يؤثر الخطر الخاص على الأفراد فقط وليس المجتمع ككل، مثال ذلك الوفاة المبكرة، سرقة السيارات، حرائق المساكن. وهناك أربعة أنواع رئيسية من هذه الأخطار:</p>
+                                <ul>
+                                    <li><strong>أخطار الأشخاص:</strong> خطر الوفاة المبكرة - خطر عدم كفاية الدخل أثناء فترة التقاعد - خطر المرض - خطر فقدان العمل.</li>
+                                    <li><strong>أخطار الممتلكات:</strong> يقصد بالممتلكات كل ما يمتلكه الشخص، مثل مباني، سيارات، منقولات، تتعرض هذه الممتلكات لأخطار عدة مثل التلف، التدمير، السرقة.</li>
+                                    <li><strong>أخطار المسؤولية:</strong> أن يكون الشخص مسؤولاً شرعاً أو قانوناً إذا أتى بفعل أدى إلى إصابة بدنية أو تلف ممتلكات لشخص آخر. تشمل: أخطار المسؤولية لأصحاب السيارات والسفن والطائرات، أخطار المسؤولية نتيجة الأخطاء المهنية من الأطباء، المحامين، المحاسبين، الصيادلة، المهندسين، والمهنيين الآخرين.</li>
+                                </ul>
+                            </div>
+
+                            <div class="lecture-box indigo-border">
+                                <h3>🔍 خامساً: تقسيم الأخطار حسب المصادر والمسببات</h3>
+                                <ul>
+                                    <li><strong>المخاطر الطبيعية Natural Risks:</strong> مثل الزلازل - الفيضانات - العواصف - الحرائق الطبيعية.</li>
+                                    <li><strong>المخاطر البشرية Human Risks:</strong> مثل الأخطاء البشرية - الإهمال - الاحتيال - السرقة.</li>
+                                    <li><strong>المخاطر الاقتصادية Economic Risks:</strong> مثل التضخم - تغير أسعار الفائدة - تغير أسعار الصرف - مخاطر الائتمان.</li>
+                                    <li><strong>المخاطر التشغيلية Operational Risks:</strong> مثل تعطل الآلات - أخطاء العاملين - فشل نظم المعلومات - انقطاع الكهرباء - مشكلات سلسلة الإمداد.</li>
+                                    <li><strong>المخاطر الاستراتيجية Strategic Risks:</strong> مثل دخول منافس قوي - تغير تفضيلات العملاء - فشل استراتيجية التوسع - ظهور تكنولوجيا جديدة.</li>
+                                    <li><strong>مخاطر الالتزام Compliance Risks:</strong> وتنشأ نتيجة عدم الالتزام بالقوانين واللوائح والسياسات.</li>
+                                </ul>
+                                <p class="mt-10"><strong>مسبب الخطر والعامل المساعد:</strong></p>
+                                <ul>
+                                    <li><strong>مسبب الخطر الأساسي:</strong> هو الظاهرة المسببة للخسارة، فعلى سبيل المثال، "الحريق" أو "الإعصار" أو "السرقة"، هي مسببات للخسارة التي حدثت.</li>
+                                    <li><strong>العامل المساعد للخطر:</strong> هو ظرف ربما قد يؤدي إلى إتاحة أو زيادة فرصة الخسارة الناشئة من مسبب الخطر، مثل هذه المسببات تظهر عادة لوجود السلوك البشري مخالطا للظواهر الطبيعية والعامة.</li>
+                                </ul>
+                            </div>
+
+                            <div class="lecture-box green-border">
+                                <h3>⚠️ سادساً: الحادث والخسارة</h3>
+                                <ul>
+                                    <li><strong>الحادث Accident:</strong> يعرف الحادث بأنه التحقق المادي لظاهرة من الظواهر الطبيعية أو العامة مما ينتج عنه خسارة فعلية.</li>
+                                    <li><strong>الخسارة Loss:</strong> فقد الحياة أو الإصابات البدنية، النقص في قيمة الممتلكات أو فناؤها، النقص في قيمة الدخل أو زواله، زيادة النفقات، والذي قد ينتج من تحقق حادث معين للأشخاص أو ممتلكاتهم.</li>
+                                </ul>
+                            </div>
+
+                            <div class="exam-box">
+                                <h3>💡 السؤال المقالي في المحاضرة</h3>
+                                <p><strong>س: تحدث عن التصنيفات الأساسية للخطر وتقسيمات الأخطار حسب مصادر المخاطر؟</strong></p>
+                                <p class="exam-desc"><strong>ما يجب أن يتضمن السؤال المقالي النقاط الآتية:</strong> الأخطار الاقتصادية - الاخطار الغير اقتصادية، الأخطار العامة - الأخطار الخاصة، مخاطر طبيعية - مخاطر بشرية - مخاطر اقتصادية - مخاطر استراتيجية - مخاطر تشغيلية.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            econ: {
+                title: "مبادئ الاقتصاد الكلي",
+                lectures: [
+                    { title: "المحاضرة 1: مقدمة الاقتصاد الكلي", content: "<p>جاري رفع المحتوى الأصلي من المحاضرة...</p>" }
+                ]
+            },
+            db: {
+                title: "قواعد البيانات",
+                lectures: [
+                    { title: "المحاضرة 1: مقدمة في قواعد البيانات", content: "<p>جاري رفع المحتوى الأصلي من المحاضرة...</p>" }
+                ]
+            },
+            investment_sec: {
+                title: "مبادئ الاستثمار (سكشن)",
+                lectures: [
+                    { title: "السكشن 1: أساسيات الاستثمار", content: "<p>جاري رفع المحتوى...</p>" }
+                ]
+            },
+            insurance_sec: {
+                title: "التأمين وإدارة المخاطر - الأنظمة جمعة (سكشن)",
+                lectures: [
+                    { title: "السكشن 1", content: "<p>جاري رفع المحتوى...</p>" }
+                ]
+            },
+            db_lab: {
+                title: "قواعد البيانات (معمل)",
+                lectures: [
+                    { title: "معمل 1", content: "<p>جاري رفع المحتوى...</p>" }
+                ]
+            },
+            prog: {
+                title: "تصميم برامج الحاسب الآلي",
+                lectures: [
+                    { title: "المحاضرة 1", content: "<p>جاري رفع المحتوى...</p>" }
+                ]
+            },
+            prog_lab: {
+                title: "تصميم برامج الحاسب الآلي (معمل)",
+                lectures: [
+                    { title: "معمل 1", content: "<p>جاري رفع المحتوى...</p>" }
+                ]
+            },
+            investment: {
+                title: "مبادئ الاستثمار",
+                lectures: [
+                    { title: "المحاضرة 1", content: "<p>جاري رفع المحتوى...</p>" }
+                ]
+            },
+            schedule: {
+                title: "جدول المحاضرات الأسبوعي",
+                lectures: [
+                    {
+                        title: "📅 مواعيد يوم الإثنين والخميس",
+                        content: `
+                            <ul>
+                                <li><strong>الإثنين:</strong> اقتصاد كلي (مدرج زوسر)، قواعد بيانات (معمل)، استثمار (نجيب محفوظ)، تأمين (طه حسين).</li>
+                                <li><strong>الخميس:</strong> قواعد بيانات (خوفو)، تصميم برامج (خوفو)، معمل تصميم برامج، استثمار (إنتريس).</li>
+                            </ul>
+                        `
+                    }
+                ]
+            }
+        };
+
+        function loadSubject(key, element) {
+            document.querySelectorAll('.subject-card').forEach(c => c.classList.remove('active'));
+            if(element) element.classList.add('active');
+
+            const subject = subjectsData[key];
+            const contentArea = document.getElementById('contentArea');
+
+            let html = `
+                <div class="active-subject-header">
+                    <h2>${subject.title}</h2>
+                    <span class="badge-count">${subject.lectures.length} محاضرات/ملخصات</span>
+                </div>
+            `;
+
+            subject.lectures.forEach((lec, idx) => {
+                html += `
+                    <div class="lecture-item">
+                        <div class="lecture-header" onclick="toggleLecture(this)">
+                            <span>📖 ${lec.title}</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="lecture-body ${idx === 0 ? 'open' : ''}">
+                            ${lec.content}
+                        </div>
+                    </div>
+                `;
+            });
+
+            contentArea.innerHTML = html;
+        }
+
+        function toggleLecture(header) {
+            const body = header.nextElementSibling;
+            body.classList.toggle('open');
+        }
+
+        // Initial Load
+        loadSubject('insurance');
+   function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+     
+   </script>
+</body>
+</html>
